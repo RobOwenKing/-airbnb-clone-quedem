@@ -1,5 +1,27 @@
-<%= image_tag @experience.photo, alt: @experience.name %>
-<h1><%= @experience.name %></h1>
-<p><%= @experience.description %></p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="title">
+        <h1><%= @experience.name %></h1>
+      </div>
+      <div class="img-border">
+        <%= image_tag @experience.photo, alt: @experience.name, class: "card-category img-left" %>
+      </div>
+        <div class="experience-summary">
+            <p><strong>Summary:</strong> <%= @experience.description %></p>
+            <p><strong>Where:</strong> <%= @experience.location %></p>
+            <p><strong>When:</strong> <%= @experience.date_choices %></p>
+            <p>Max number of guests: <strong><%= @experience.max_participants %></strong></p>
+        </div>
 
-<%= link_to "Back to all experiences", experiences_path %>
+
+      <%= link_to "Back to all experiences", experiences_path, class: "btn-gradient btn-back" %>
+    </div>
+    <div class="col">
+      <div class="payment-details">
+        <h3>Payment Details:</h3>
+        <%= link_to "Book Experience", experience_path(@experience), class: "btn-flat btn-book-experience"  %>
+      </div>
+    </div>
+  </div>
+</div>
