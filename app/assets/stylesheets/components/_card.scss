@@ -62,6 +62,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
 }
 
 .card-experience > img {
@@ -74,6 +75,13 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+}
+
+.card-experience h3 {
+  font-size: 16px;
+  font-weight: lighter;
+  position: relative;
+  top: 16px;
 }
 
 .card-experience p {

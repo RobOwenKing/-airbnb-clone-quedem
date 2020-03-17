@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+h1 {
+  padding: 16px;
+}
+
+.card-display {
+  margin-left: 0px;
+}
+
+.map {
+  margin-right: 0px;
+  background-color: #ffffff;
+  height: 100%;
+}
+

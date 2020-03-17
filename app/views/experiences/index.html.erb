@@ -1,5 +1,35 @@
-<h1>Find your experience</h1>
+<div class="container">
 
-<% @experiences.each do |experience| %>
-  <%= link_to experience.name, experience_path(experience.id) %>
-<% end %>
+  <h1>Find your experience</h1>
+
+  <div class="row">
+    <div class="col">
+      <div class="card-display">
+        <% @experiences.each do |experience| %>
+        <div class="card-experience">
+          <img src=<%= experience.photo %> />
+          <div class="card-experience-infos">
+            <div>
+              <h2><%= link_to experience.name, experience_path(experience.id) %></h2>
+              <p><%= experience.description %></p>
+            </div>
+            <h3 class="card-experience-pricing"> $<%= experience.price %></h3>
+            <img src="https://kitt.lewagon.com/placeholder/users/ry" class="card-experience-user avatar-bordered" />
+            <!-- use experience.user.avatar for img src="" -->
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="map">
+        <p>map</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
