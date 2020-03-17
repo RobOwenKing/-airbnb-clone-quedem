@@ -1,14 +1,16 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Experience.all
+    @experiences = policy_scope(Experience)
   end
 
   def new
     @experience = Experience.new
+    authorize @experience
   end
 
   def create
     @experience = Experience.new(experience_params)
+    authorize @experience
     if @experience.save
       redirect_to experience_path(@experience)
     else
@@ -18,6 +20,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = experience.find(params[:id])
+    authorize @experience
   end
 
   private
