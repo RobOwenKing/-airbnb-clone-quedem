@@ -1,3 +1,5 @@
 <%= image_tag @experience.photo, alt: @experience.name %>
 <h1><%= @experience.name %></h1>
 <p><%= @experience.description %></p>
+
+<%= link_to "Back to all experiences", experiences_path %>
