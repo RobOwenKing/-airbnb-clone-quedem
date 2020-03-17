@@ -10,7 +10,11 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
-    authorize @experience
+    if authorize @experience
+      @experience.user = current_user
+    else
+      render :home
+    end
     if @experience.save
       redirect_to experience_path(@experience)
     else
@@ -19,7 +23,7 @@ class ExperiencesController < ApplicationController
   end
 
   def show
-    @experience = experience.find(params[:id])
+    @experience = Experience.find(params[:id])
     authorize @experience
   end
 

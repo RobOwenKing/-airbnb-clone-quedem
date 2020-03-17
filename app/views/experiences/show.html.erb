@@ -1,2 +1,5 @@
-<h1>Experiences#show</h1>
-<p>Find me in app/views/experiences/show.html.erb</p>
+<%= image_tag @experience.photo, alt: @experience.name %>
+<h1><%= @experience.name %></h1>
+<p><%= @experience.description %></p>
+
+<%= link_to "Back to all experiences", experiences_path %>

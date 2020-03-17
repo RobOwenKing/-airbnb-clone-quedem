@@ -45,3 +45,12 @@ Experience.create(name: 'Segway tour',
   max_participants: 8,
   price: 25.00,
   photo: 'https://source.unsplash.com/5clN6UY2oPQ')
+
+Experience.create(name: 'Jam Session',
+  user_id: user1.id,
+  description: 'Just a bunch of musicians making music together',
+  location: 'The smallest, smokiest room in the pub',
+  date_choices: 'Thursday evenings',
+  max_participants: 12,
+  price: 2.00,
+  photo: 'https://source.unsplash.com/yzRK1hZJbP4')
