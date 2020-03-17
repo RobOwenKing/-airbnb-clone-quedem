@@ -1,0 +1,100 @@
+// All CSS below is used to create a large banner like cover
+// possibly used for our show page
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+// All CSS below is used to create a card to display an experience
+// along with some details. Small image on the left, details on the right.
+// possibly used for our user dashboard.
+
+.card-dash-experience {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-dash-experience img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-dash-experience h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-dash-experience p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-dash-experience .card-dash-experience-infos {
+  padding: 16px;
+}
+
+// All CSS below is used to create a card with an image that
+// spans all the card width. Details are underneath the picture.
+// This component has a dependency on avatar.
+// Possibly used in our index page.
+
+.card-experience {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-experience > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-experience h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-experience p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-experience .card-experience-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-experience-infos .card-experience-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
