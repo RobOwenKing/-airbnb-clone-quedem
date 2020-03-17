@@ -1,2 +1,12 @@
-<h1>Experiences#new</h1>
-<p>Find me in app/views/experiences/new.html.erb</p>
+<h1>Add your experience</h1>
+
+<%= simple_form_for @experience do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :date_choices %>
+  <%= f.input :photo %>
+  <%= f.input :max_participants %>
+  <%= f.input :price %>
+  <%= f.submit "Add experience", class: "btn btn-primary" %>
+<% end %>

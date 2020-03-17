@@ -1,5 +1,5 @@
 <h1>Find your experience</h1>
 
 <% @experiences.each do |experience| %>
-  <%= link_to experience.name, experience_path(experience) %>
+  <%= link_to experience.name, experience_path(experience.id) %>
 <% end %>
