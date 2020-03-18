@@ -11,24 +11,24 @@
   width: 100%;
   padding: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 16px;
 }
 
 .payment-details {
-    margin-top: 145px;
     margin-left: 50px;
     background-color: white;
     height: 430px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.btn-gradient {
+.btn-2 {
   &.btn-back {
     position: absolute;
     margin-top: 50px;
   }
 }
 
-.btn-flat {
+.btn-1 {
   &.btn-book-experience {
     position: absolute;
     bottom: 10px;
@@ -44,23 +44,24 @@
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 100%;
+  display: contents;
 }
 
-.title {
+.show-title {
   margin: 50px;
 }
 
-h3 {
+.payment-details > h3 {
   font-size: 24px;
-  margin: 8px;
-  color: $main-light;
+  color: black;
 }
 
 h1 {
   padding: 24px;
   color: #733271;
+  text-align: center;
 }
 
-p {
-  color: $main-light;
+.experience-summary > p {
+  color: black;
 }

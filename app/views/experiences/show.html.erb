@@ -1,11 +1,9 @@
-
-
 <div class="container-show">
-  <div class="row">
-    <div class="col">
-      <div class="title">
+      <div class="show-title">
         <h1><%= @experience.name %></h1>
       </div>
+  <div class="row">
+    <div class="col">
         <div class="img-border">
           <% if @experience.photo.attached? %>
             <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "card-category img-left" %>
@@ -17,12 +15,12 @@
             <p><strong>When:</strong> <%= @experience.date_choices %></p>
             <p>Max number of guests: <strong><%= @experience.max_participants %></strong></p>
         </div>
-      <%= link_to "Back to all experiences", experiences_path, class: "btn-gradient btn-back" %>
+      <%= link_to "Back to all experiences", experiences_path, class: "btn-2 btn-back" %>
     </div>
     <div class="col">
       <div class="payment-details">
         <h3>Payment Details:</h3>
-        <%= link_to "Book Experience", experience_path(@experience), class: "btn-flat btn-book-experience"  %>
+        <%= link_to "Book Experience", experience_path(@experience), class: "btn-1 btn-book-experience"  %>
       </div>
     </div>
   </div>
