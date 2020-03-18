@@ -1,12 +1,16 @@
 h1 {
-  color: #733271,
+  color: $main,
 }
 
 .form-new {
-  color: #733271;
+  color: $main;
 }
 
 .container {
   width: 50%;
   margin: 0 auto;
+}
+
+.btn-add {
+  margin-bottom: 50px;
 }
