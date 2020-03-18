@@ -1,5 +1,5 @@
-.container {
-  width: 100%;
+.container-show {
+  margin: 0 50px;
 }
 
 .img-left{
@@ -53,9 +53,14 @@
 h3 {
   font-size: 24px;
   margin: 8px;
+  color: $main-light;
 }
 
 h1 {
   padding: 24px;
   color: #733271;
+}
+
+p {
+  color: $main-light;
 }
