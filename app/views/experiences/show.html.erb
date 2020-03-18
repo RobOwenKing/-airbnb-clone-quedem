@@ -1,11 +1,9 @@
-
-
 <div class="container-show">
-  <div class="row">
-    <div class="col">
-      <div class="title">
+      <div class="show-title">
         <h1><%= @experience.name %></h1>
       </div>
+  <div class="row">
+    <div class="col">
         <div class="img-border">
           <% if @experience.photo.attached? %>
             <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "card-category img-left" %>
