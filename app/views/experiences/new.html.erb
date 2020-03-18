@@ -2,14 +2,14 @@
 <h1>Add your experience</h1>
 <div class="form-new">
 <%= simple_form_for @experience do |f| %>
-  <%= f.input :name, label: 'Name:', hint: 'Name your experience!' %>
-  <%= f.input :description, label: 'Description:', hint: 'Keep it short and sweet.' %>
-  <%= f.input :location, label: 'Where:', hint: 'Address please.' %>
-  <%= f.input :date_choices, label: 'When:', hint: 'Choose some dates.' %>
-  <%= f.input :max_participants, label: 'How many guests?:', hint: 'Max number of allowed guests.' %>
-  <%= f.input :price, label: 'Cost:', hint: 'Per person cost.'  %>
-  <%= f.input :photo, as: :file, label: 'Photo:', hint: 'P.S. a good quality photo will draw more eyes!' %>
-  <%= f.submit "Add experience", class: "btn btn-1" %>
+  <%= f.input :name, label: 'Name:', hint: 'Name your experience!', placeholder: 'Ex: Dance Party', error: 'A title for your experience is required!' %>
+  <%= f.input :description, label: 'Description:', hint: 'Keep it short and sweet.', placeholder: 'Ex :Enjoy awesome electronic music and strong drinks' %>
+  <%= f.input :location, label: 'Where:', hint: 'Address please.', placeholder: 'Ex: Marco\'s bachelor pad', error: 'We need to know where to go!' %>
+  <%= f.input :date_choices, label: 'When:', hint: 'Choose some dates.', placeholder: 'Ex: Everyday baby!', error: 'We need to know when!' %>
+  <%= f.input :max_participants, label: 'How many guests?:', hint: 'Max number of allowed guests.', placeholder: 'Ex: No limit' %>
+  <%= f.input :price, label: 'Cost:', hint: 'Per person cost.', placeholder: 'Ex: Free'  %>
+  <%= f.input :photo, as: :file, label: 'Photo:', hint: 'P.S. a good quality photo will draw more eyes!', error: 'A photo is a must have!' %>
+  <%= f.submit "Add experience", class: "btn btn-1 btn-add" %>
 <% end %>
 </div>
 </div>
