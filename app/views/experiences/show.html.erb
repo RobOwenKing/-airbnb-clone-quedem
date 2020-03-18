@@ -4,11 +4,11 @@
       <div class="title">
         <h1><%= @experience.name %></h1>
       </div>
-      <div class="img-border">
-        <% if @experience.photo.attached? %>
-          <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "card-category img-left" %>
-        <% end %>
-      </div>
+        <div class="img-border">
+          <% if @experience.photo.attached? %>
+            <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "card-category img-left" %>
+          <% end %>
+        </div>
         <div class="experience-summary">
             <p><strong>Summary:</strong> <%= @experience.description %></p>
             <p><strong>Where:</strong> <%= @experience.location %></p>
