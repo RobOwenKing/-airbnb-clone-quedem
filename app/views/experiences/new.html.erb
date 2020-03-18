@@ -5,7 +5,7 @@
   <%= f.input :description %>
   <%= f.input :location %>
   <%= f.input :date_choices %>
-  <%= f.input :photo %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :max_participants %>
   <%= f.input :price %>
   <%= f.submit "Add experience", class: "btn btn-primary" %>
