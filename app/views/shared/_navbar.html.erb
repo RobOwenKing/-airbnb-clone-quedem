@@ -10,10 +10,10 @@
     <ul class="navbar-nav d-flex align-items-center mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Find experience", experiences_path, class: "nav-btn btn-gradient" %>
+          <%= link_to "Find experience", experiences_path, class: "btn-1" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Post experience", new_experience_path, class: "nav-btn btn-ghost" %>
+          <%= link_to "Post experience", new_experience_path, class: "btn-2" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
