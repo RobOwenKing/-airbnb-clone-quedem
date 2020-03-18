@@ -7,7 +7,9 @@
       <div class="card-display">
         <% @experiences.each do |experience| %>
         <div class="card-experience">
-          <img src=<%= experience.photo %> />
+          <% if experience.photo.attached? %>
+            <%= cl_image_tag experience.photo.key, alt: experience.name, class: "card-category img-left" %>
+          <% end %>
           <div class="card-experience-infos">
             <div>
               <h2><%= link_to experience.name, experience_path(experience.id) %></h2>
