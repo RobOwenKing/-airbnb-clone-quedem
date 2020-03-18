@@ -39,7 +39,7 @@ experience1.photo.attach(io: file1, filename: 'image1.png', content_type: 'image
 
 experience2 = Experience.create(name: 'Bungee jumping',
   user_id: user2.id,
-  description: 'No idea why you would want to',
+  description: "Do you ever find yourself on top of a perfectly serviceable bridge and think what you'd really like to do is jump off?",
   location: 'A very high place',
   date_choices: '10am-4pm every day',
   max_participants: 20,
@@ -63,7 +63,7 @@ experience3.photo.attach(io: file3, filename: 'image3.png', content_type: 'image
 
 experience4 = Experience.create(name: 'Jam Session',
   user_id: user1.id,
-  description: 'Just a bunch of musicians making music together',
+  description: 'Just a bunch of musicians making music together. All instruments welcome.',
   location: 'The smallest, smokiest room in the pub',
   date_choices: 'Thursday evenings',
   max_participants: 12,
@@ -72,6 +72,3 @@ experience4 = Experience.create(name: 'Jam Session',
 
 file4 = URI.open('https://source.unsplash.com/yzRK1hZJbP4')
 experience4.photo.attach(io: file4, filename: 'image4.png', content_type: 'image/png')
-
-
-
