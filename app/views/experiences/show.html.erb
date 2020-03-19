@@ -1,26 +1,42 @@
 <div class="container-show">
-      <div class="show-title">
-        <h1><%= @experience.name %></h1>
-      </div>
-  <div class="row">
-    <div class="col">
-        <div class="img-border">
-          <% if @experience.photo.attached? %>
-            <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "card-category img-left" %>
-          <% end %>
-        </div>
-        <div class="experience-summary">
-            <p><strong>Summary:</strong> <%= @experience.description %></p>
-            <p><strong>Where:</strong> <%= @experience.location %></p>
-            <p><strong>When:</strong> <%= @experience.date_choices %></p>
-            <p>Max number of guests: <strong><%= @experience.max_participants %></strong></p>
-        </div>
-      <%= link_to "Back to all experiences", experiences_path, class: "btn-2 btn-back" %>
+  <div class="d-flex justify-content-between mt-4 show-header">
+    <div class="show-title">
+      <h1><%= @experience.name %></h1>
+      <p><%= @experience.location %></p>
     </div>
-    <div class="col">
+    <div class="backlink">
+      <%= link_to "Back to all", experiences_path, class: "btn-back" %>
+    </div>
+  </div>
+
+        <div class="img-box">
+          <% if @experience.photo.attached? %>
+            <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "show-img" %>
+          <% end %>
+          <div class="show-price">
+            <h3>$ <%= @experience.price %> </h3>
+          </div>
+        </div>
+
+  <div class="row show-row">
+    <div class="col-8 col-summary">
+      <div class="experience-summary">
+            <ul class="list-inline show-icons">
+              <li class="list-inline-item"><i class="fas fa-map-marked-alt show-icon"></i><%= @experience.location %></li>
+              <li class="list-inline-item"><i class="fas fa-clock show-icon"></i><%= @experience.date_choices %></li>
+              <li class="list-inline-item"><i class="fas fa-user-friends show-icon"></i><strong><%= @experience.max_participants %></strong> people</li>
+            </ul>
+        <h3 class="show-description"><%= @experience.description %></h3>
+      </div>
+    </div>
+    <div class="col-4 col-payment">
       <div class="payment-details">
-        <h3>Payment Details:</h3>
-        <%= link_to "Book Experience", experience_path(@experience), class: "btn-1 btn-book-experience"  %>
+        <!-- <div class="show-price">
+          <h3> <%= @experience.price %></h3>
+        </div> -->
+        <div class="show-book-btn">
+          <%= link_to "Book Experience", experience_path(@experience), class: "btn-1 btn-book-experience"  %>
+        </div>
       </div>
     </div>
   </div>

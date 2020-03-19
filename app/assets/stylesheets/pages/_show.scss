@@ -1,67 +1,97 @@
 .container-show {
-  margin: 0 50px;
+  margin: 0 auto;
+  width: 80%
 }
 
-.img-left{
-  margin-left: auto;
-}
-
-.experience-summary {
-  background-color: #ffffff;
-  width: 100%;
-  padding: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-top: 16px;
-}
-
-.payment-details {
-    margin-left: 50px;
-    background-color: white;
-    height: 430px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.btn-2 {
-  &.btn-back {
-    position: absolute;
-    margin-top: 50px;
-  }
-}
-
-.btn-1 {
-  &.btn-book-experience {
-    position: absolute;
-    bottom: 10px;
-    right: 30px;
-    padding: 24px;
-    width: 50%;
-    font-size: 24px;
-    text-align: center;
-  }
-}
-
-.img-border {
-  background-color: #ffffff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 100%;
-  display: contents;
+.show-header {
+  letter-spacing: 1px;
 }
 
 .show-title {
-  margin: 50px;
+  margin-left: 30px;
 }
 
-.payment-details > h3 {
-  font-size: 24px;
-  color: black;
-}
 
-h1 {
-  padding: 24px;
+.show-title > h1 {
   color: #733271;
-  text-align: center;
+  text-align: left;
 }
 
-.experience-summary > p {
-  color: black;
+.show-title > p {
+  margin-left: 24px;
 }
+
+.backlink {
+}
+
+.btn-back {
+  color: black;
+  opacity: 0.5;
+  margin-top: 50%;
+}
+
+.btn-back:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: $main;
+  transition: border 0.3s ease;
+}
+
+.img-box {
+  position: relative;
+}
+
+.show-img {
+  border-radius: 24px;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.show-price {
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  color: #ffffff;
+  text-shadow: 0 0 2px #0e0000, -1px -1px 0 #0e0000, -2px -2px 1px #0e0000, -2px -2px 2px #0e0000;
+}
+
+.col-summary {
+  padding: 0px;
+}
+
+.col-payment {
+  padding: 0px;
+}
+
+.show-row {
+  margin-top: 16px;
+}
+
+.experience-summary {
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.experience-summary > h3 {
+  margin-left: 14px;
+}
+
+.show-icon {
+  margin-right: 4px;
+  color: $main;
+}
+
+.btn-book-experience {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  padding: 24px;
+  font-size: 24px;
+  text-align: center;
+  &.btn-book-experience:hover {
+    text-decoration: none
+  }
+}
+
