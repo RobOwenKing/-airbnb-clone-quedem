@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+puts "running the seeds"
 
 Experience.destroy_all
 User.destroy_all
@@ -29,7 +29,7 @@ user2.save!
 experience1 = Experience.create(name: 'Wine tasting',
   user_id: user1.id,
   description: 'Tasting of wine',
-  location: 'Some vineyard',
+  location: '137 Carrer Sant Antoni Maria Claret',
   date_choices: '3pm every Saturday',
   max_participants: 20,
   price: 30.00)
@@ -40,7 +40,7 @@ experience1.photo.attach(io: file1, filename: 'image1.png', content_type: 'image
 experience2 = Experience.create(name: 'Bungee jumping',
   user_id: user2.id,
   description: "Do you ever find yourself on top of a perfectly serviceable bridge and think what you'd really like to do is jump off?",
-  location: 'A very high place',
+  location: '1829 Tyne Blvd',
   date_choices: '10am-4pm every day',
   max_participants: 20,
   price: 20.00)
@@ -51,7 +51,7 @@ experience2.photo.attach(io: file2, filename: 'image2.png', content_type: 'image
 experience3 = Experience.create(name: 'Segway tour',
   user_id: user1.id,
   description: 'Feel cooler than you look as you see the sights',
-  location: 'City centre',
+  location: '8620 Ruthelen St.',
   date_choices: '10am, 11am and 3pm Saturdays and Sundays',
   max_participants: 8,
   price: 25.00)
@@ -64,7 +64,7 @@ experience3.photo.attach(io: file3, filename: 'image3.png', content_type: 'image
 experience4 = Experience.create(name: 'Jam Session',
   user_id: user1.id,
   description: 'Just a bunch of musicians making music together. All instruments welcome.',
-  location: 'The smallest, smokiest room in the pub',
+  location: '2720 Biscay St.',
   date_choices: 'Thursday evenings',
   max_participants: 12,
   price: 2.00)
@@ -72,3 +72,5 @@ experience4 = Experience.create(name: 'Jam Session',
 
 file4 = URI.open('https://source.unsplash.com/yzRK1hZJbP4')
 experience4.photo.attach(io: file4, filename: 'image4.png', content_type: 'image/png')
+
+puts "finished"

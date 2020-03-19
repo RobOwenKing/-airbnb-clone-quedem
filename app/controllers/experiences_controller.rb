@@ -9,6 +9,7 @@ class ExperiencesController < ApplicationController
         lat: experience.latitude,
         lng: experience.longitude
       }
+    end
   end
 
   def new
