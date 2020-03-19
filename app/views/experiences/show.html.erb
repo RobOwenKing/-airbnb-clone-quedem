@@ -14,7 +14,7 @@
             <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "show-img" %>
           <% end %>
           <div class="show-price">
-            <h3>$ <%= @experience.price %> </h3>
+            <h3>$ <%= sprintf("%.2f", @experience.price) %> </h3>
           </div>
         </div>
 
