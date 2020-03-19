@@ -2,11 +2,16 @@ class ExperiencesController < ApplicationController
   def index
 
     @experiences = policy_scope(Experience)
-    # if params[:location_query] && params[:location_query] != ""
-    #   @experiences = Experience.geocoded.near(params[:location_query], 50) #returns experiences with coordinates
-    # else
-    #   @experiences = Experience.geocoded
-    # end
+
+    if params[:location_query].present?
+      @experiences = Experience.geocoded.near(params[:location_query], 50) #returns experiences with coordinates
+    else
+      @experiences = Experience.geocoded
+    end
+
+    if params[:search_query].present?
+      @experiences = @experiences.where("name ILIKE ?", "%#{params[:search_query]}%")
+    end
 
   @markers = @experiences.map do |experience|
     {
