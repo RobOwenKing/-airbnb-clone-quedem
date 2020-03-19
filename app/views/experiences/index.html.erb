@@ -22,8 +22,7 @@
               </p>
             </div>
             <h3 class="card-experience-pricing"> $<%= sprintf("%.2f", experience.price) %></h3>
-            <img src="https://kitt.lewagon.com/placeholder/users/ry" class="card-experience-user avatar-bordered" />
-            <!-- use experience.user.avatar for img src="" -->
+            <%= cl_image_tag experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
           </div>
         </div>
         <% end %>
