@@ -6,4 +6,7 @@ class Experience < ApplicationRecord
   validates :location, presence: true
   validates :date_choices, presence: true
   validates :photo, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
