@@ -1,11 +1,11 @@
-class BookingPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-def new?
+  def new?
     return true
   end
 
@@ -13,3 +13,4 @@ def new?
     return true
   end
 end
+
