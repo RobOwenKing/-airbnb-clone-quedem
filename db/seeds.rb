@@ -5,6 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+def handle_string_io_as_file(io, filename)
+  return io unless io.class == StringIO
+  file = Tempfile.new(["temp",".png"], encoding: 'ascii-8bit')
+  file.binmode
+  file.write io.read
+  file.open
+end
 
 puts "Running the seeds"
 
@@ -14,18 +23,21 @@ User.destroy_all
 
 puts "Old data wiped"
 
-user1 = User.new
-user1.email = 'test@example.com'
-user1.password = 'password'
-user1.password_confirmation = 'password'
-user1.save!
+user1 = User.create(email: 'test@example.com',
+  name: 'Juan',
+  password: 'password')
 
-user2 = User.new
-user2.email = 'fake@mcphakerson.com'
-user2.name = 'Fakey McPhakerson'
-user2.password = 'fakeitup'
-user2.password_confirmation = 'fakeitup'
-user2.save!
+avatar1 = URI.open('https://kitt.lewagon.com/placeholder/users/TheJuanAndOnly99')
+user1.photo.attach(io: handle_string_io_as_file(avatar1, 'image.png'), filename: 'avatar1.png', content_type: 'image/png')
+
+
+user2 = User.create(email: 'fake@mcphakerson.com',
+  name: 'Marco',
+  password: 'fakeitup')
+
+
+avatar2 = URI.open("https://kitt.lewagon.com/placeholder/users/marcdebiolley")
+user2.photo.attach(io: handle_string_io_as_file(avatar2, 'image.png'), filename: 'avatar2.png', content_type: 'image/png')
 
 puts "Two users created"
 
