@@ -3,6 +3,7 @@ class BookingPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
     def new?
       return true
@@ -11,5 +12,8 @@ class BookingPolicy < ApplicationPolicy
     def create?
       return true
     end
-  end
+
+    # def mybookings?
+    #   return true
+    # end
 end
