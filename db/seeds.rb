@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "running the seeds"
+puts "Running the seeds"
 
+Booking.destroy_all
 Experience.destroy_all
 User.destroy_all
 
+puts "Old data wiped"
 
 user1 = User.new
 user1.email = 'test@example.com'
@@ -25,6 +27,7 @@ user2.password = 'fakeitup'
 user2.password_confirmation = 'fakeitup'
 user2.save!
 
+puts "Two users created"
 
 experience1 = Experience.create(name: 'Wine tasting',
   user_id: user1.id,
@@ -59,8 +62,6 @@ experience3 = Experience.create(name: 'Segway tour',
 file3 = URI.open('https://source.unsplash.com/5clN6UY2oPQ')
 experience3.photo.attach(io: file3, filename: 'image3.png', content_type: 'image/png')
 
-
-
 experience4 = Experience.create(name: 'Jam Session',
   user_id: user1.id,
   description: 'Just a bunch of musicians making music together. All instruments welcome.',
@@ -69,8 +70,8 @@ experience4 = Experience.create(name: 'Jam Session',
   max_participants: 12,
   price: 2.00)
 
-
 file4 = URI.open('https://source.unsplash.com/yzRK1hZJbP4')
 experience4.photo.attach(io: file4, filename: 'image4.png', content_type: 'image/png')
 
-puts "finished"
+puts "Four experiences created"
+puts "Finished"
