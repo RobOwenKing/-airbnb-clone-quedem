@@ -13,6 +13,9 @@
           <% if @experience.photo.attached? %>
             <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "show-img" %>
           <% end %>
+          <div class="host-img">
+            <%= cl_image_tag @experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
+          </div>
           <div class="show-price">
             <h3>$ <%= sprintf("%.2f", @experience.price) %> </h3>
           </div>
