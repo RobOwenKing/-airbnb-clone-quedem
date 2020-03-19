@@ -1,0 +1,10 @@
+<div class="container-new">
+  <h1>Book your experience</h1>
+  <div class="form-new">
+    <%= simple_form_for [@experience, @booking] do |f| %>
+    <%= f.input :date, label: 'Date:', hint: "Date and time you're booking for", placeholder: 'Ex: 7pm, Sat 23 March' %>
+    <%= f.input :participants_no, label: 'Number of participants', hint: 'How many of you are there?', placeholder: 'Ex: 2' %>
+    <%= f.submit "Book experience", class: "btn btn-1 btn-add" %>
+    <% end %>
+  </div>
+</div>
