@@ -9,26 +9,26 @@
     </div>
   </div>
 
-        <div class="img-box">
-          <% if @experience.photo.attached? %>
-            <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "show-img" %>
-          <% end %>
-          <div class="host-img">
-            <%= cl_image_tag @experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
-          </div>
-          <div class="show-price">
-            <h3>$ <%= sprintf("%.2f", @experience.price) %> </h3>
-          </div>
-        </div>
+  <div class="img-box">
+    <% if @experience.photo.attached? %>
+    <%= cl_image_tag @experience.photo.key, alt: @experience.name, class: "show-img" %>
+    <% end %>
+    <div class="host-img">
+      <%= cl_image_tag @experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
+    </div>
+    <div class="show-price">
+      <h3>$ <%= sprintf("%.2f", @experience.price) %> </h3>
+    </div>
+  </div>
 
   <div class="row show-row">
     <div class="col-8 col-summary">
       <div class="experience-summary">
-            <ul class="list-inline show-icons">
-              <li class="list-inline-item"><i class="fas fa-map-marked-alt show-icon"></i><%= @experience.location %></li>
-              <li class="list-inline-item"><i class="fas fa-clock show-icon"></i><%= @experience.date_choices %></li>
-              <li class="list-inline-item"><i class="fas fa-user-friends show-icon"></i><strong><%= @experience.max_participants %></strong> people</li>
-            </ul>
+        <ul class="list-inline show-icons">
+          <li class="list-inline-item"><i class="fas fa-map-marked-alt show-icon"></i><%= @experience.location %></li>
+          <li class="list-inline-item"><i class="fas fa-clock show-icon"></i><%= @experience.date_choices %></li>
+          <li class="list-inline-item"><i class="fas fa-user-friends show-icon"></i><strong><%= @experience.max_participants %></strong> people</li>
+        </ul>
         <h3 class="show-description"><%= @experience.description %></h3>
       </div>
     </div>
@@ -36,13 +36,29 @@
       <div class="payment-details">
         <div class="show-book-btn">
          <%= link_to "Book Experience", new_experience_booking_path(@experience), class: "btn-1 btn-book-experience"  %>
-        </div>
-      </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="row">
+   <div class="col-6">
+     <% @reviews.each do |review| %>
+     <div class="review-card">
+     <%= review.booking.user.name %>
+     <%= review.title %>
+     </div>
+     <% end %>
+   </div>
+   <div class="col-6">
+    <div class="map-wrapper">
+      <div
+      id="map"
+      style="width: 100%; height: calc(60vh - 10px); position: sticky; top: 5px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
     </div>
-
-    <% @reviews.each do |review| %>
-    <%= review.title %>
-    <% end %>
-
   </div>
+</div>
 </div>
