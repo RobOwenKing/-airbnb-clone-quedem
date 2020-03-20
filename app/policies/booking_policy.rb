@@ -5,15 +5,19 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-def new?
+  def new?
     return true
   end
 
-    # def mybookings?
-    #   return true
-    # end
-
   def create?
     return true
+  end
+
+  def confirm?
+    true if user
+  end
+
+  def reject?
+    true if user
   end
 end
