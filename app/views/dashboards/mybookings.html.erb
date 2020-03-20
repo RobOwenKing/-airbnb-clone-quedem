@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-mybookings">
   <h1>My Bookings</h1>
 
   <p>You have <%= @mybookings.length %> booking<%= 's' if @mybookings.length != 1 %></p>
@@ -13,7 +13,7 @@
         <div class="booking-details">
           <h2><%= link_to booking.experience.name, experience_path(booking.experience.id) %></h2>
           <ul class="list-inline show-icons">
-            <li class="list-inline-item"><i class="far fa-calendar-alt show-icon"></i><%= booking.date %></li>
+            <li class="list-inline-item"><i class="far fa-calendar-alt show-icon"></i><%= booking.date.strftime('%B %d, %Y at: %H:%M') %></li>
             <li class="list-inline-item"><i class="fas fa-map-marked-alt show-icon"></i><%= booking.experience.location %></li>
             <li class="list-inline-item"><i class="fas fa-user-friends show-icon"></i><strong><%= booking.participants_no %></strong> people</li>
           </ul>
