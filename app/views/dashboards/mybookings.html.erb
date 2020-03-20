@@ -12,7 +12,7 @@
       <div class="card-experience-infos">
         <div>
           <h2><%= link_to booking.experience.name, experience_path(booking.experience.id) %></h2>
-          <p><%= booking.date %></p>
+          <p><i class="far fa-calendar-alt"></i> <%= booking.date %></p>
         </div>
         <h3 class="card-experience-pricing"><i class="fas fa-user-friends show-icon"></i> <%= booking.participants_no %></h3>
         <%= cl_image_tag booking.experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
