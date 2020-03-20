@@ -2,7 +2,9 @@
   <div class="d-flex justify-content-between show-header">
     <div class="show-title">
       <h1><%= @experience.name %></h1>
-      <p><%= @experience.location %></p>
+      <% @reviews.each do |review| %>
+      <p>Experience curated by: <strong><%= review.booking.user.name %></strong></p>
+      <% end %>
     </div>
     <div class="backlink">
       <%= link_to "Back to all", experiences_path, class: "btn-back" %>
