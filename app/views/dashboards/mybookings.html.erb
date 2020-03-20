@@ -1,6 +1,8 @@
 <div class="container">
   <h1>My Bookings</h1>
 
+  <p>You have <%= @mybookings.length %> booking<%= 's' if @mybookings.length != 1 %></p>
+
   <div class="card-display">
     <% @mybookings.each do |booking| %>
     <div class="card-experience">
