@@ -5,7 +5,11 @@ class DashboardPolicy < ApplicationPolicy
     end
   end
 
-    def mybookings?
-      return true if user
-    end
+  def mybookings?
+    return true if user
+  end
+
+  def myexperiences?
+    return true if user
+  end
 end

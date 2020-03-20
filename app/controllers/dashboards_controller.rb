@@ -6,5 +6,7 @@ class DashboardsController < ApplicationController
   end
 
   def myexperiences
+    @myexperiences = current_user.experiences
+    authorize(:dashboard)
   end
 end
