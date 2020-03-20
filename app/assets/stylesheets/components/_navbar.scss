@@ -18,3 +18,15 @@
 .navbar > a {
   color: $main;
 }
+
+.logo {
+  height: 65px;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  p {
+    margin-bottom: 0px;
+  }
+}
