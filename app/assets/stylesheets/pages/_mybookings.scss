@@ -1,0 +1,15 @@
+.booking-details > h2 > a {
+  color: $main;
+}
+
+.card-experience-infos {
+  &.mybookings-card {
+  padding: 16px 16px 0 16px;
+  justify-content: space-around;
+  }
+}
+
+.btn-mybookins {
+  position: relative;
+  bottom: 16px;
+}

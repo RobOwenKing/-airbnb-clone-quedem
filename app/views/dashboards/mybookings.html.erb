@@ -9,13 +9,16 @@
       <% if booking.experience.photo.attached? %>
       <%= cl_image_tag booking.experience.photo.key, alt: booking.experience.name, class: "card-category img-left" %>
       <% end %>
-      <div class="card-experience-infos">
-        <div>
+      <div class="card-experience-infos mybookings-card">
+        <div class="booking-details">
           <h2><%= link_to booking.experience.name, experience_path(booking.experience.id) %></h2>
-          <p><i class="far fa-calendar-alt"></i> <%= booking.date %></p>
+          <ul class="list-inline show-icons">
+            <li class="list-inline-item"><i class="far fa-calendar-alt show-icon"></i><%= booking.date %></li>
+            <li class="list-inline-item"><i class="fas fa-map-marked-alt show-icon"></i><%= booking.experience.location %></li>
+            <li class="list-inline-item"><i class="fas fa-user-friends show-icon"></i><strong><%= booking.participants_no %></strong> people</li>
+          </ul>
         </div>
-        <%= link_to "Review Experience",  new_booking_review_path(booking), class: "btn-2" %>
-        <h3 class="card-experience-pricing"><i class="fas fa-user-friends show-icon"></i> <%= booking.participants_no %></h3>
+        <%= link_to "Review Experience",  new_booking_review_path(booking), class: "btn-2 btn-mybookins" %>
         <%= cl_image_tag booking.experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
       </div>
     </div>

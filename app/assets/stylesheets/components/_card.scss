@@ -99,6 +99,10 @@
   position: relative;
 }
 
+.card-experience-infos > div > h2 > a {
+  color: $main;
+}
+
 .card-experience-infos .card-experience-user {
   position: absolute;
   right: 16px;
