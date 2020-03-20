@@ -4,24 +4,30 @@
   <p>You have <%= @mybookings.length %> booking<%= 's' if @mybookings.length != 1 %></p>
 
   <div class="card-display">
-    <% @mybookings.each do |booking| %>
-    <div class="card-experience">
-      <% if booking.experience.photo.attached? %>
-      <%= cl_image_tag booking.experience.photo.key, alt: booking.experience.name, class: "card-category img-left" %>
-      <% end %>
-      <div class="card-experience-infos mybookings-card">
-        <div class="booking-details">
-          <h2><%= link_to booking.experience.name, experience_path(booking.experience.id) %></h2>
-          <ul class="list-inline show-icons">
-            <li class="list-inline-item"><i class="far fa-calendar-alt show-icon"></i><%= booking.date.strftime('%B %d, %Y at: %H:%M') %></li>
-            <li class="list-inline-item"><i class="fas fa-map-marked-alt show-icon"></i><%= booking.experience.location %></li>
-            <li class="list-inline-item"><i class="fas fa-user-friends show-icon"></i><strong><%= booking.participants_no %></strong> people</li>
-          </ul>
+    <div class="row">
+      <% @mybookings.each do |booking| %>
+        <div class="col-6">
+          <div class="card-experience">
+            <% if booking.experience.photo.attached? %>
+            <%= cl_image_tag booking.experience.photo.key, alt: booking.experience.name, class: "card-category img-left" %>
+            <% end %>
+            <div class="card-experience-infos mybookings-card">
+              <div class="booking-details">
+                <h2><%= link_to booking.experience.name, experience_path(booking.experience.id) %></h2>
+                <ul class="list-inline show-icons">
+                  <li class="list-inline-item" style="margin-top: 15px;"><i class="far fa-calendar-alt show-icon"></i><%= booking.date.strftime('%B %d, %Y at: %H:%M') %></li>
+                </ul>
+                <ul class="list-inline show-icons">
+                  <li class="list-inline-item"><i class="fas fa-map-marked-alt show-icon"></i><%= booking.experience.location %></li>
+                  <li class="list-inline-item"><i class="fas fa-user-friends show-icon"></i><strong><%= booking.participants_no %></strong></li>
+                </ul>
+              </div>
+              <%= link_to "Review",  new_booking_review_path(booking), class: "btn-2 btn-mybookins" %>
+              <%= cl_image_tag booking.experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
+            </div>
+          </div>
         </div>
-        <%= link_to "Review Experience",  new_booking_review_path(booking), class: "btn-2 btn-mybookins" %>
-        <%= cl_image_tag booking.experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
-      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
