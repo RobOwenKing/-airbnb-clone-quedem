@@ -41,30 +41,32 @@
    </div>
  </div>
 
- <div class="row">
-   <div class="col-6">
-     <% @reviews.each do |review| %>
-     <div class="review-card">
-      <div class="d-block text-center">
-        <%= cl_image_tag review.booking.user.photo.key, class: "card-experience-user avatar-large" %>
-        <p  style="margin-bottom: 0px;"><%= review.booking.user.name %></p>
-      </div>
-      <div class="review-content">
-       <h5 style="margin-bottom: 0px;"><u><b><%= review.title %></b></u>  </h5>
-       <p> <%= review.content %> </p>
-     </div>
 
+ <div class="reviews-map">
+   <div class="row">
+    <div class="col-6">
+      <% @reviews.each do |review| %>
+      <div class="review-card">
+        <div class="d-block text-center review-user">
+          <%= cl_image_tag review.booking.user.photo.key, class: "card-experience-user avatar-large" %>
+          <p  style="margin-bottom: 0px;"><%= review.booking.user.name %></p>
+        </div>
+        <div class="review-content">
+         <h5 style="margin-bottom: 0px;"><u><b><%= review.title %></b></u>  </h5>
+         <p> <%= review.content %> </p>
+       </div>
+     </div>
+     <% end %>
    </div>
-   <% end %>
- </div>
- <div class="col-6">
-  <div class="map-wrapper">
-    <div
-    id="map"
-    style="width: 100%; height: calc(60vh - 10px); position: sticky; top: 5px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+   <div class="col-6">
+    <div class="map-wrapper">
+      <div
+      id="map"
+      style="width: 100%; height: calc(60vh - 10px); position: sticky; top: 5px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
   </div>
 </div>
 </div>
