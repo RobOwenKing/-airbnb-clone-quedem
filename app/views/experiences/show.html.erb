@@ -44,7 +44,10 @@
  <div class="row">
    <div class="col-6">
      <% @reviews.each do |review| %>
+     <div class="review-card">
+     <%= review.booking.user.name %>
      <%= review.title %>
+     </div>
      <% end %>
    </div>
    <div class="col-6">
