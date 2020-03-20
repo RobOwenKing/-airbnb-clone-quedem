@@ -1,15 +1,25 @@
+.container-mybookings {
+  margin: 25px auto 32px auto;
+  width: 80%
+}
+
+.container-mybookings > p {
+  margin-left: 16px;
+}
+
 .booking-details > h2 > a {
   color: $main;
+  font-size: 20px;
 }
 
 .card-experience-infos {
   &.mybookings-card {
   padding: 16px 16px 0 16px;
-  justify-content: space-around;
   }
 }
 
 .btn-mybookins {
   position: relative;
   bottom: 16px;
+  right: 32px;
 }

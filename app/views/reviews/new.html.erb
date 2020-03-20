@@ -1,6 +1,12 @@
-<%= simple_form_for [@experience, @booking, @review] do |f| %>
-<%= f.input :title %>
-<%= f.input :content %>
-<%= f.input :stars %>
-<%= f.submit %>
-<% end %>
+
+<div class="container-new">
+  <h1>Add your review!</h1>
+  <div class="form-new">
+    <%= simple_form_for [@experience, @booking, @review] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :stars %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>
