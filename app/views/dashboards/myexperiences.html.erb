@@ -1,36 +1,44 @@
-<div class="container">
+<div class="container-mybookings">
   <h1>My Experiences</h1>
 
   <p>You have <%= @myexperiences.length %> experience<%= 's' if @myexperiences.length != 1 %></p>
 
   <div class="card-display">
-    <% @myexperiences.each do |experience| %>
-    <div class="card-experience">
-      <% if experience.photo.attached? %>
-      <%= cl_image_tag experience.photo.key, alt: experience.name, class: "card-category img-left" %>
-      <% end %>
-      <div class="card-experience-infos">
-        <div>
-          <h2><%= link_to experience.name, experience_path(experience.id) %></h2>
-          <% bookings = experience.bookings %>
-          <% bookings.each do |booking| %>
-            <%= booking.user.name %>
-            <i class="fas fa-user-friends show-icon i-left-margin"></i> <%= booking.participants_no %>
-            <i class="far fa-calendar-alt i-left-margin"></i> <%= booking.date %>
-            <% if booking.confirmed == "Confirmed" %>
-              <i class="fas fa-check i-left-margin" style="color: #1EDD88;"></i> Confirmed
-            <% else %>
-              <i class="fas fa-check i-left-margin" style="color: #888888;"></i> <%= link_to "Confirm", confirm_booking_path(booking.id) %>
+    <div class="row">
+      <% @myexperiences.each do |experience| %>
+        <div class="col-6">
+          <div class="card-experience">
+            <% if experience.photo.attached? %>
+            <%= cl_image_tag experience.photo.key, alt: experience.name, class: "card-category img-left" %>
             <% end %>
-            <% if booking.confirmed == "Rejected" %>
-              <i class="fas fa-times i-left-margin" style="color: #FD1015;"></i> Rejected
-            <% else %>
-              <i class="fas fa-times i-left-margin" style="color: #888888;"></i> <%= link_to "Reject", reject_booking_path(booking.id) %>
-            <% end %>
-          <% end %>
+            <div class="card-experience-infos mybookings-card">
+              <div class="booking-details">
+                <h2><%= link_to experience.name, experience_path(experience.id) %></h2>
+                <% bookings = experience.bookings %>
+                <% bookings.each do |booking| %>
+                <ul class="list-inline show-icons">
+                  <%= booking.user.name %>
+                  <i class="fas fa-user-friends show-icon i-left-margin" style="margin-top: 15px;"></i> <%= booking.participants_no %>
+                  <i class="far fa-calendar-alt i-left-margin"></i> <%= booking.date.strftime('%B %d, %Y at: %H:%M') %>
+                </ul>
+                <ul class="list-inline experience-confirm">
+                  <% if booking.confirmed == "Confirmed" %>
+                    <i class="fas fa-check i-left-margin" style="color: #1EDD88;"></i> Confirmed
+                  <% else %>
+                    <i class="fas fa-check i-left-margin" style="color: #888888;"></i> <%= link_to "Confirm", confirm_booking_path(booking.id) %>
+                  <% end %>
+                  <% if booking.confirmed == "Rejected" %>
+                    <i class="fas fa-times i-left-margin" style="color: #FD1015;"></i> Rejected
+                  <% else %>
+                    <i class="fas fa-times i-left-margin" style="color: #888888;"></i> <%= link_to "Reject", reject_booking_path(booking.id) %>
+                  <% end %>
+                </ul>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
