@@ -13,7 +13,7 @@ before_action :set_booking, only: [:new, :create]
     authorize @review
     @review.booking = @booking
     if @review.save
-      redirect_to experience_path(@experience)
+      redirect_to experience_path(@booking.experience)
     else
       render :new
     end
