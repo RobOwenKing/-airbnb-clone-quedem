@@ -1,2 +1,26 @@
-<h1>My Experiences</h1>
+<div class="container">
+  <h1>My Experiences</h1>
 
+  <p>You have <%= @myexperiences.length %> experience<%= 's' if @myexperiences.length != 1 %></p>
+
+  <div class="card-display">
+    <% @myexperiences.each do |experience| %>
+    <div class="card-experience">
+      <% if experience.photo.attached? %>
+      <%= cl_image_tag experience.photo.key, alt: experience.name, class: "card-category img-left" %>
+      <% end %>
+      <div class="card-experience-infos">
+        <div>
+          <h2><%= link_to experience.name, experience_path(experience.id) %></h2>
+          <% bookings = experience.bookings %>
+          <% bookings.each do |booking| %>
+            <%= booking.user.name %>
+            <i class="fas fa-user-friends show-icon i-left-margin"></i> <%= booking.participants_no %>
+            <i class="far fa-calendar-alt i-left-margin"></i> <%= booking.date %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
