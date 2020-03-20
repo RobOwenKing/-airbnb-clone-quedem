@@ -1,31 +1,41 @@
-
 <div class="container-home">
   <div class="row">
     <div class="col col-button">
       <div class="content">
-        <h1>Quedem Experiences</h1>
-
-        <%= link_to "Find your experience", experiences_path, class: "btn-1 btn-home" %>
-      </div>
-    </div>
-    <div class="col col-carousel">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <% @experiences.each_with_index do |exp, index| %>
-          <div class="carousel-item <%= index == 0 && 'active' %>">
-            <div class="home-banner d-block" style="background-image: url(<%= cl_image_path exp.photo.key %>)"></div>
+        <h1>Find your next experience</h1>
+        <%= form_tag experiences_path, method: :get do %>
+        <%= text_field_tag :location_query,
+        params[:location_query],
+        class: "form-control input-home",
+          placeholder: "Where"
+          %>
+          <%= text_field_tag :search_query,
+          params[:search_query],
+          class: "form-control input-home",
+            placeholder: "What"
+            %>
+            <%= submit_tag "Search", class: "btn-1 btn-home" %>
+            <% end %>
           </div>
-          <% end %>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="col col-carousel">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% @experiences.each_with_index do |exp, index| %>
+              <div class="carousel-item <%= index == 0 && 'active' %>">
+                <div class="home-banner d-block" style="background-image: url(<%= cl_image_path exp.photo.key %>)"></div>
+              </div>
+              <% end %>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
