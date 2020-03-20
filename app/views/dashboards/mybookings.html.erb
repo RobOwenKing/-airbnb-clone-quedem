@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>My Bookings</h1>
+
+  <div class="card-display">
+    <% @mybookings.each do |booking| %>
+    <div class="card-experience">
+      <% if booking.experience.photo.attached? %>
+      <%= cl_image_tag booking.experience.photo.key, alt: booking.experience.name, class: "card-category img-left" %>
+      <% end %>
+      <div class="card-experience-infos">
+        <div>
+          <h2><%= link_to booking.experience.name, experience_path(booking.experience.id) %></h2>
+          <p><%= booking.date %></p>
+        </div>
+        <h3 class="card-experience-pricing"><i class="fas fa-user-friends show-icon"></i> <%= booking.participants_no %></h3>
+        <%= cl_image_tag booking.experience.user.photo.key, class: "card-experience-user avatar-bordered" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
