@@ -1,9 +1,10 @@
 .container-home {
-  height: calc(100vh - 64px);
+  height: calc(100vh - 81px);
+  width: calc(100vw - 15px);
 }
 
 .home-banner {    // Specific CSS for your home-page
-  height: calc(100vh - 64px);
+  height: calc(100vh - 81px);
   background-size: cover;
   // display: flex;
   // justify-content: center;
@@ -22,12 +23,12 @@
 .col-button {
   padding: 0;
   background-color: #F4F4F4;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 81px);
 }
 
 .col-carousel {
   padding: 0;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 81px);
 }
 
 .btn-home {
