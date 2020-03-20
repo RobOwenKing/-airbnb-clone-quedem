@@ -101,8 +101,21 @@
   }
 }
 
-.map-wrapper{
+.map-wrapper {
   display: flex;
   justify-content: flex-end;
+}
+
+.review-card {
+  box-shadow: 3px 3px 4px 3px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.review-content {
+  margin-left: 20px;
 }
 
