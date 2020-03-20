@@ -16,6 +16,15 @@
                 <h2><%= link_to booking.experience.name, experience_path(booking.experience.id) %></h2>
                 <ul class="list-inline show-icons">
                   <li class="list-inline-item" style="margin-top: 15px;"><i class="far fa-calendar-alt show-icon"></i><%= booking.date.strftime('%B %d, %Y at: %H:%M') %></li>
+                  <li class="list-inline-item">
+                    <% if booking.confirmed == "Confirmed" %>
+                      <i class="fas fa-check i-left-margin" style="color: #1EDD88;"></i> Confirmed
+                    <% elsif booking.confirmed == "Rejected" %>
+                      <i class="fas fa-times i-left-margin" style="color: #FD1015;"></i> Rejected
+                    <% else %>
+                      <i class="fas fa-question i-left-margin" style="color: #888888;"></i> Pending
+                    <% end %>
+                  </li>
                 </ul>
                 <ul class="list-inline show-icons">
                   <li class="list-inline-item"><i class="fas fa-map-marked-alt show-icon"></i><%= booking.experience.location %></li>
