@@ -3,10 +3,10 @@
   <h1>Add your review!</h1>
   <div class="form-new">
     <%= simple_form_for [@experience, @booking, @review] do |f| %>
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :stars %>
-    <%= f.submit %>
+    <%= f.input :title, label: "Title:", hint: "One or two word to describe your overall experience." %>
+    <%= f.input :content, label: "Tell us about your experience!", hint: "What did you like?" %>
+    <%= f.input :stars, label: "Rating from 1 to 5:", hint: "Be honest and fair!" %>
+    <%= f.submit class: "btn btn-1 btn-add" %>
     <% end %>
   </div>
 </div>
