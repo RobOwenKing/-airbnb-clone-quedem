@@ -44,6 +44,12 @@ def show
   @experience = Experience.find(params[:id])
   authorize @experience
   @reviews = @experience.reviews
+
+  @markers = [
+    {
+      lat: @experience.latitude,
+      lng: @experience.longitude
+    }]
 end
 
 private

@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     end
     @booking.confirmed = "Pending"
     if @booking.save
-      redirect_to experience_path(@experience)
+      redirect_to mybookings_path
     else
       render :new
     end
