@@ -25,9 +25,17 @@ class BookingsController < ApplicationController
   end
 
   def confirm
+    @booking = Booking.find(params[:id])
+    @booking.confirmed = "Confirmed" if authorize @booking
+    @booking.save
+    redirect_to myexperiences_path
   end
 
   def reject
+    @booking = Booking.find(params[:id])
+    @booking.confirmed = "Rejected" if authorize @booking
+    @booking.save
+    redirect_to myexperiences_path
   end
 
   def destroy

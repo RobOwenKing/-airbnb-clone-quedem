@@ -17,6 +17,16 @@
             <%= booking.user.name %>
             <i class="fas fa-user-friends show-icon i-left-margin"></i> <%= booking.participants_no %>
             <i class="far fa-calendar-alt i-left-margin"></i> <%= booking.date %>
+            <% if booking.confirmed == "Confirmed" %>
+              <i class="fas fa-check i-left-margin" style="color: #1EDD88;"></i> Confirmed
+            <% else %>
+              <i class="fas fa-check i-left-margin" style="color: #888888;"></i> <%= link_to "Confirm", confirm_booking_path(booking.id) %>
+            <% end %>
+            <% if booking.confirmed == "Rejected" %>
+              <i class="fas fa-times i-left-margin" style="color: #FD1015;"></i> Rejected
+            <% else %>
+              <i class="fas fa-times i-left-margin" style="color: #888888;"></i> <%= link_to "Reject", reject_booking_path(booking.id) %>
+            <% end %>
           <% end %>
         </div>
       </div>

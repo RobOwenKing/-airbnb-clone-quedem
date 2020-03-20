@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :bookings, only: :destroy do
     resources :reviews, only: [ :new, :create]
+    member do
+      get '/confirm', to: 'bookings#confirm'
+      get '/reject', to: 'bookings#reject'
+    end
   end
 
   get '/mybookings', to: 'dashboards#mybookings', as: :mybookings
